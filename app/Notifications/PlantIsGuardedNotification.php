@@ -53,8 +53,8 @@ class PlantIsGuardedNotification extends Notification
     public function toArray(object $notifiable): array
     {
         return [
-            $this->plant->name,
-            "{$notifiable->firstname} {$notifiable->lastname}"
+            'plant' => $this->plant->name,
+            'guardian' => "{$this->plant->guardian->firstname} {$this->plant->guardian->lastname}"
         ];
     }
 }

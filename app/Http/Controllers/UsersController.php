@@ -33,7 +33,15 @@ class UsersController extends Controller
     public function me(): JsonResponse
     {
         return response()->json(
-            auth()->user()->load('roles.permissions')
+            auth()->user()
+                ->load(['roles.permissions', 'notifications'])
+                ->loadCount('notifications')
+        );
+    }
+
+    public function notifications() {
+        return response()->json(
+            auth()->user()->load('notifications')->notifications
         );
     }
 
