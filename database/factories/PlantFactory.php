@@ -24,6 +24,7 @@ class PlantFactory extends Factory
             'name' => fake()->colorName(),
             'description' => fake()->realText(),
             'price' => fake()->randomFloat(2, 5, 100),
+            'img_url' => 'https://loremflickr.com/320/240/plant',
             'plant_species_id' => PlantSpecies::query()->inRandomOrder()->first()->getKey(),
         ];
     }

@@ -27,6 +27,8 @@ Route::get('current-user', [UsersController::class, 'me']);
 
 Route::resource('users', UsersController::class)->except('create', 'edit');
 Route::get('user/notifications', [UsersController::class, 'notifications']);
+Route::post('user/notifications/{notification}/read', [UsersController::class, 'readNotification']);
+Route::get('user/notifications/count', [UsersController::class, 'countNotifications']);
 Route::resource('plants', PlantsController::class)->except('index', 'create', 'edit');
 Route::resource('species', PlantSpeciesController::class)->except('create', 'edit', 'store');
 Route::post('plants/search', [PlantsController::class, 'search']);

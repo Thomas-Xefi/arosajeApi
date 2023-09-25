@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('name');
             $table->text('description')->nullable();
             $table->float('price')->nullable();
+            $table->string('img_url')->nullable();
             $table->foreignIdFor(PlantSpecies::class)->constrained();
             $table->foreignIdFor(Status::class)->nullable()->constrained('status');
             $table->foreignIdFor(User::class, 'owner_id')->nullable()->constrained('users');
