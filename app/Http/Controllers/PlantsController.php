@@ -23,6 +23,9 @@ class PlantsController extends Controller
         );
     }
 
+    /**
+     * @param string $plant The plant id being seen.
+     */
     public function show(Plant $plant): JsonResponse
     {
         return response()->json(
@@ -42,6 +45,9 @@ class PlantsController extends Controller
         );
     }
 
+    /**
+     * @param string $plant The plant id being updated.
+     */
     public function update(UpdatePlantRequest $request, Plant $plant): JsonResponse
     {
         $plant->update($request->validated());
